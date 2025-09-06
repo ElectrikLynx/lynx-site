@@ -3,11 +3,11 @@
   "teamName": "Joel Mounts",
   "position": "General Manager",
   "primaryPicture": {
-    "source": "/images/team_profiles/joel/joel_portrait.png",
+    "source": "/images/team_profiles/joel/joel-portrait-bw.jpg",
     "alt": "profile picture of Joel"
   },
   "secondaryPicture": {
-    "source": "/images/team_profiles/joel/joel_portrait-news.png",
+    "source": "/images/team_profiles/joel/joel-portrait.jpg",
     "alt": "profile picture of Joel with filter"
   },
   "portfolioLink": "https://joelmounts.com/"

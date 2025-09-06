@@ -1,9 +1,5 @@
 ---
-// TODO add types
-// URL: http://localhost:4321/comps/#logo
 
-import { TitleLineSVG, LogoHead } from "@components/svgs";
-import { Text } from "@components/shared";
 const { variant, size } = Astro.props;
 
 const logoSettings = (logoSize: string) => {
@@ -27,20 +23,11 @@ const varientComponents = () => {
 const desiredStyles = logoSettings(size);
 ---
 
-<div class="flex flex-row gap-2">
-  {
-    varientComponents().includes("icon") ? (
-      <LogoHead sizeSq={desiredStyles.iconSize} />
-    ) : null
-  }
-  {
-    varientComponents().includes("text") ? (
-      <div>
-        <Text tag="h1" class={desiredStyles.fontClasses}>
-          Electric Lynx
-        </Text>
-        <TitleLineSVG sizeLxW={desiredStyles.lineSvg} />
-      </div>
-    ) : null
-  }
+<div class="flex items-center gap-2">
+  <img
+    src="/images/logos/electriclynxlogo-whitesquig.png"
+    alt="Electric Lynx Logo"
+    class="w-auto h-auto shrink-0"
+    style="height: clamp(2.5rem, 8vw, 6rem);" 
+  />
 </div>

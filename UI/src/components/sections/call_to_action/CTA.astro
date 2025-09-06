@@ -11,7 +11,7 @@ import { Text, CTAButton } from "@components/shared";
   <div
     class:list={[
       "border rounded-2xl p-8 m-8 border-2 flex justify-center flex-col w-11/12",
-      "customContaienr",
+      "customContainer",
     ]}
   >
     <div class="mx-auto text-center max-w-xl">
@@ -19,14 +19,12 @@ import { Text, CTAButton } from "@components/shared";
         let's add some <span class="spicy">spice</span> to your digital presence.
       </Text>
       <Text tag="p">
-        Our goal is to foucus what can we do digitaly to get you business, help
-        remove the burden of your business digital business, let us handle the
-        ditigla stuff, so you can focus on the improtance of your business
+        Our goal is simple: use digital tools to bring you customers. We take the weight of marketing and tech off your shoulders so you can focus on running your business.
       </Text>
     </div>
 
     <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-      <CTAButton variant={"primary"} navigateTo={"./contact-us"}>
+      <CTAButton variant={"primary"} navigateTo={"#contact-us"}>
         <span class="text-header-3 relative z-[5]">Get In Touch</span>
       </CTAButton>
     </div>
@@ -34,7 +32,7 @@ import { Text, CTAButton } from "@components/shared";
 </section>
 
 <style>
-  .customContaienr {
+  .customContainer {
     border-color: var(--elynx-orange);
     background-color: var(--elynx-orange-transparent);
   }

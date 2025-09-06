@@ -1,52 +1,105 @@
 ---
-import BtnLink from "../shared/BtnLink.astro";
-import { Container } from "@components/shared/";
 import Navitem from "../shared/Navitem.astro";
-
 import { LogoTitle } from "@components/blocks";
 import { routes } from "@routes/mainNavigation";
-
 const activeRoutes = routes.filter((route) => route.isActive);
 ---
 
-<header class="header bg-body fixed inset-x-0 top-0 z-50">
-  <nav class="w-full flex justify-between gap-6 relative">
-    <div class="min-w-max inline-flex relative">
-      <a href="/" class="relative flex items-center gap-3">
-        <div class="relative w-30 overflow-hidden flex rounded-xl">
-          <LogoTitle size="sm" />
-        </div>
-      </a>
-    </div>
+<header class="fixed inset-x-0 top-0 z-[70] bg-body border-b border-box-border">
+  <nav class="mx-auto w-full max-w-7xl flex items-center justify-between gap-6 px-4 py-3">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3">
+      <LogoTitle size="sm" />
+    </a>
 
-    <div
-      class="flex h-0 overflow-hidden lg:!h-auto md:!h-auto lg:scale-y-100 md:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-4 lg:flex-row md:flex-row w-full lg:justify-between md:justify-between lg:items-center md:items-center absolute lg:relative md:relative top-full lg:top-0 md:top-0 bg-body lg:bg-transparent md:bg-transparent border-x border-x-box-border lg:border-x-0 md:border-x-0"
-    >
-      <ul
-        class="border-b-2 border-b pb-4 border-elynx-orange justify-center border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row md:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center"
-      >
-        {
-          activeRoutes.map((item) => {
-            return <Navitem {...item} />;
-          })
-        }
-      </ul>
-    </div>
+    <!-- Desktop nav -->
+    <ul class="hidden lg:flex items-center gap-4 text-lg text-heading-2">
+      {activeRoutes.map((item) => <Navitem {...item} />)}
+    </ul>
 
-    <div
-      aria-hidden="true"
-      class="fixed hidden inset-0 lg:!hidden bg-box-bg bg-opacity-50 backdrop-filter backdrop-blur-xl"
+    <!-- Hamburger (mobile only) -->
+    <button
+      id="nav-toggle"
+      class="lg:hidden inline-flex items-center justify-center p-2 rounded-md border border-box-border text-heading-2"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Toggle menu"
     >
-    </div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden fixed inset-x-0 z-[60] bg-body border-t border-box-border shadow-xl"
+    style="top: 0px;"  <!-- JS sets this to header height -->
+  >
+    <ul class="flex flex-col gap-4 p-4 text-lg text-heading-2">
+      {activeRoutes.map((item) => <Navitem {...item} />)}
+    </ul>
+  </div>
+
+  <!-- Overlay: below menu, below header -->
+  <div
+    id="nav-overlay"
+    class="hidden lg:hidden fixed inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm z-[50]"
+    style="top: 0px;"  <!-- JS sets this to header height -->
+    aria-hidden="true"
+  ></div>
 </header>
 
-<style>
-  .header {
-    min-height: var(--header-height);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
+<script is:raw>
+(() => {
+  const header  = document.querySelector('header');
+  const toggle  = document.getElementById('nav-toggle');
+  const menu    = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('nav-overlay');
+
+  function headerHeight() {
+    return header ? header.offsetHeight : 0;
   }
-</style>
+
+  function positionPanels() {
+    const top = headerHeight();
+    if (menu)    menu.style.top    = top + 'px';
+    if (overlay) overlay.style.top = top + 'px';
+  }
+
+  function setOpen(open) {
+    if (!menu || !overlay || !toggle) return;
+    menu.classList.toggle('hidden', !open);
+    overlay.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('overflow-hidden', open);
+  }
+
+  // Toggle menu
+  toggle?.addEventListener('click', () => {
+    const willOpen = menu.classList.contains('hidden');
+    setOpen(willOpen);
+  });
+
+  // Close on overlay click
+  overlay?.addEventListener('click', () => setOpen(false));
+
+  // Close on nav link click (mobile only)
+  menu?.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  // Resize handling
+  const sync = () => {
+    positionPanels();
+    if (window.matchMedia('(min-width: 1024px)').matches) setOpen(false);
+  };
+
+  document.addEventListener('astro:page-load', sync);
+  window.addEventListener('resize', sync);
+  window.addEventListener('load', positionPanels);
+  positionPanels();
+})();
+</script>

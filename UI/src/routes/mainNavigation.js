@@ -15,12 +15,12 @@ export const routes = [
     },
     {
         href: "#about-us",
-        text: "About us",
+        text: "About Us",
         icon: HiUser,
         isActive: true
     },
     {
-        href: "/contact-us",
+        href: "#contact-us",
         text: "Contact",
         icon: HiMail,
         isActive: true

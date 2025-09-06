@@ -4,11 +4,11 @@ import { Text, CTAButton } from "@components/shared";
 
 <container class="hero-section">
   <div class="hero-section__headline-grid lg:w-10/12">
-    <div class="space-y-2 h-fit p-6 hero-section__headline-text">
+    <div class="space-y-2 h-2 p-0 md:p-6 hero-section__headline-text">
       <Text
         class="text-center text-5xl font-bold md:text-6xl lg:text-7xl leading-tight"
       >
-        Leave your customers in awe.
+        Charge Up your Signal.
       </Text>
     </div>
 
@@ -16,14 +16,15 @@ import { Text, CTAButton } from "@components/shared";
       class="hero-section__headline-ctabutton margin-bottom-5px flex flex-col justify-self-center justify-center items-center"
     >
       <Text
-        class="md:w-10/12 w-8/12 text-2xl leading-normal lg:leading-relaxed my-8 mx-4 text-red"
+        class="md:w-10/12 w-8/12 text-xl leading-normal lg:leading-relaxed my-8 mx-4 text-red text-black border border-black rounded-xl bg-white/40 p-6 shadow-lg"
       >
-        <b>Your brand is your reputation.</b>It creates value for your business.
-        And it needs careful attention. <b>We're web pros</b>, and we're here to
-        electrify your brand.
+      We play the game of <i>attention arbitrage</i>: tapping into untapped corners of the internet where customers actually pay attention — while your rivals stay asleep.
+        <br><br>
+      <b>Current Focus:</b> Organic short-form + paid ads, alongside bold individual outreach.
+
       </Text>
       <div class:list={["mb-8 text-xl ", "buttonText"]}>
-        <CTAButton variant={"primary"} navigateTo={"./contact-us"}>
+        <CTAButton variant={"primary"} navigateTo={"#contact-us"}>
           <span>Get In Touch</span>
         </CTAButton>
       </div>
@@ -82,7 +83,7 @@ import { Text, CTAButton } from "@components/shared";
   @media (max-width: 768px) {
     .hero-section__headline-grid {
       grid-template-columns: 1fr;
-      grid-template-rows: 280px 250px 1fr;
+      grid-template-rows: 250px 250px 1fr;
       grid-template-areas: "maintxt" "pic" "CTA";
     }
   }

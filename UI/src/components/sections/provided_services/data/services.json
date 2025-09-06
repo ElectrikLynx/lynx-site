@@ -1,35 +1,35 @@
 {
   "services": [
     {
-      "title": "Design",
-      "description": "The internet is filled with sub-par websites. We want to change that. Each of our websites is custom-made, fully-polished and built around your brand.",
+      "title": "Brand Design",
+      "description": "<b> It's all branding.</b> But cohesive brand design is a necessary starting point — standardizing fonts, logos, colors, copy and design across everywhere your customers encounters you.",
       "icon": "puzzle"
     },
     {
-      "title": "SEO",
-      "description": "We design websites with SEO in mind, using modern web technologies that make your website easy for search engines to find and index.",
+      "title": "Websites",
+      "description": " The internet is filled with sub-par websites. We want to change that. Each of our websites is custom-made, fully-polished and built around your brand. And importantly: <b> form + function.</b> ",
       "icon": "clipboard"
     },
     {
-      "title": "Core Web Vitals",
-      "description": "A set of metrics that measure real-world user experience for loading performance, interactivity, and visual stability of the page. We help achieve excellent Core Web Vitals for success with Search & User Experience",
+      "title": "SEO & AEO",
+      "description": "<b>SEO is dead, long live SEO.</b>  Search is no longer king. Today it’s LLMs, social, ads, and Google Profiles. We track the shifts so your business doesn’t fall behind.",
       "icon": "magnifyingglass"
     },
     {
-      "title": "Mobile-Adaptive",
-      "description": "Over half of internet traffic is from mobile devices. We design with mobile-first principles while adapting to tablet- and desktop-sized screens.",
-      "icon": "magnifyingglass"
+      "title": "Social Media",
+      "description": "GOOD Organic social posts are the main under-valued marketing tool. <b> They're free. Theyr'e fun.</b>  And your competition is probably doing them wrong.",
+      "icon": "video"
     },
 
     {
-      "title": "Security",
-      "description": "All sites come with HTTPS standard, ensuring your customers feel secure and are secure. All payment platforms feature state-of-the-art encryption.",
-      "icon": "securityshield"
+      "title": "Ad Management",
+      "description": "<b>From organic to paid</b>: when content performs, we put budget behind it and deliver it to your ideal customers.",
+      "icon": "speaker"
     },
     {
-      "title": "Customization",
-      "description": "We're industry-professional coders. That means that we can handle custom projects, integrations, and scale your services as your business grows.",
-      "icon": "transparentcube"
+      "title": "Pipeline Management",
+      "description": "Your business grows when your pipeline does. We set up systems to capture attention, manage leads, and turn them into paying customers.",
+      "icon": "filter"
     }
   ],
   "others": [

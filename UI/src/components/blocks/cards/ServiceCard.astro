@@ -1,11 +1,14 @@
 ---
 import {
-  HiPuzzle,
+  HiOutlinePuzzle,
   HiOutlineSearch,
   HiOutlineDeviceMobile,
   HiOutlineShieldExclamation,
   HiCubeTransparent,
-  HiCursorClick,
+  HiOutlineCursorClick,
+  HiOutlineVideoCamera,
+  HiOutlineFilter,
+  HiOutlineSpeakerphone
 } from "react-icons/hi";
 import type { IconType } from "react-icons";
 
@@ -19,16 +22,19 @@ interface Props {
 }
 
 const icons: Record<string, IconType> = {
-  puzzle: HiPuzzle,
+  puzzle: HiOutlinePuzzle,
   magnifyingglass: HiOutlineSearch,
   mobilephone: HiOutlineDeviceMobile,
   securityshield: HiOutlineShieldExclamation,
   transparentcube: HiCubeTransparent,
+  video: HiOutlineVideoCamera,
+  filter: HiOutlineFilter,
+  speaker: HiOutlineSpeakerphone
 };
 
 const { icon, title, description, included, price } = Astro.props;
 
-const IconComponent = icons[icon] || HiCursorClick;
+const IconComponent = icons[icon] || HiOutlineCursorClick;
 ---
 
 <div
@@ -46,7 +52,7 @@ const IconComponent = icons[icon] || HiCursorClick;
 
   <div class="description p-8">
     <Text tag="p">
-      {description}
+      <span set:html={description}></span>
     </Text>
   </div>
 </div>
