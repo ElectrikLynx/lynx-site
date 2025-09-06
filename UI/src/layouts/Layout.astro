@@ -5,10 +5,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import Header from "@components/elements/Header.astro";
 import Navbar from "@components/elements/Navbar.astro";
-
+import "../styles/global.css";
 interface Props {
   title: string;
 }
+
 
 const { title } = Astro.props;
 ---

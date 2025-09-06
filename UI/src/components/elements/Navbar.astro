@@ -1,9 +1,8 @@
 ---
-import BtnLink from "../shared/BtnLink.astro";
 import { Container } from "@components/shared/";
 
-import { IconButton } from "@chakra-ui/react";
-import { HiHome, HiClipboard, HiUser, HiTag, HiMail } from "react-icons/hi";
+import * as Hi from 'react-icons/hi';
+const { HiHome, HiClipboard, HiUser, HiTag, HiMail } = Hi;
 
 const icons = [
   { icon: HiHome, sectionId: "" },

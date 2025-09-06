@@ -1,4 +1,5 @@
-import { HiHome, HiClipboard, HiUser, HiTag, HiMail } from "react-icons/hi";
+import * as Hi from 'react-icons/hi';
+const { HiHome, HiClipboard, HiUser, HiTag, HiMail } = Hi;
 
 export const routes = [
     {
