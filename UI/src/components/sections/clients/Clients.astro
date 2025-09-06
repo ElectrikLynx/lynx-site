@@ -1,0 +1,58 @@
+---
+const clients = [
+  {
+    name: "Bring Back Analog",
+    logo: "/images/clients/bring_back_analog/logo.webp",
+    socials: {
+      instagram: "https://www.instagram.com/bringback.analog/",
+      facebook: "https://www.facebook.com/bringbackanalog/",
+      tiktok: "https://www.tiktok.com/@bringbackanalog",
+    },
+    blurb: "High-end analog sound systems for new generations.",
+    services: "Photography, Videography, Social Media Management, Local Outreach",
+  },
+  {
+    name: "D's Barbershop",
+    logo: "/images/clients/ds_barbershop/logo.webp",
+    website: "https://dsbarbershop.com/",
+    blurb: "Dayton's Premiere Barbershop.",
+    services: "Photography, Website Design & Maintenance",
+  },
+];
+---
+
+<section id="clients" class="">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Clients</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {clients.map((client) => (
+        <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 flex flex-col items-center text-center space-y-6 hover:shadow-lg transition">
+          <!-- Larger logo -->
+          <img src={client.logo} alt={client.name} class="h-32 w-auto object-contain" />
+
+          <h3 class="text-2xl font-semibold">{client.name}</h3>
+          <p class="text-base text-neutral-400">{client.blurb}</p>
+
+          <!-- Scope of Work -->
+          <div class="w-full border-t border-neutral-700 pt-4">
+            <h4 class="text-elynx-orange font-semibold mb-2">Scope of Work</h4>
+            <p class="text-sm text-neutral-300">{client.services}</p>
+          </div>
+
+          <!-- Links -->
+          <div class="flex flex-wrap justify-center gap-4 pt-2">
+            {client.website && (
+              <a href={client.website} target="_blank" class="text-elynx-orange hover:underline">Website</a>
+            )}
+            {client.socials?.instagram && (
+              <a href={client.socials.instagram} target="_blank" class="text-elynx-orange hover:underline">Instagram</a>
+            )}
+            {client.socials?.facebook && (
+              <a href={client.socials.facebook} target="_blank" class="text-elynx-orange hover:underline">Facebook</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
