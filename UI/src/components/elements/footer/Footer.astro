@@ -1,30 +1,32 @@
 ---
-import GroupFooterNav from "../../blocks/GroupFooterNav.astro";
-import { Container, Paragraph, BtnLink } from "@components/shared";
+// keep your imports if you need them:
 import { LogoTitle } from "@components/blocks";
-
 import FooterContainer from "./components/FooterContainer.astro";
-import { footerCompany } from "./data/links.js";
 ---
 
-<FooterContainer>
-  <Container className="pb-8 relative overflow-hidden pb-36 flex flex-col ">
-    <div class="h-full justify-center">
-      <a href="#" class="relative4">
-        <div class="relative h-12 flex rounded-xl justify-center">
-          <LogoTitle size="sm" />
-        </div>
-      </a>
-      <Paragraph className={"mt-8 flex justify-center"}>
-        <i>Meow meow, zap zap.</i>
-      </Paragraph>
-      <div class="flex justify-center mt-4">
-        <BtnLink
-          variant="secondary"
-          text="hello@electriclynx.com"
-          href="mailto:hello@electriclynx.com"
-        />
+<FooterContainer class="w-full border-t border-box-border/60 bg-sub-background">
+  <div class="mx-auto w-full max-w-5xl px-4 md:py-10">
+    <div class="flex flex-col items-center text-center gap-6 md:gap-7">
+      <div class="relative h-12 flex items-center justify-center">
+        <LogoTitle size="sm" />
       </div>
+
+      <p class="text-lg md:text-xl italic text-heading-3/90">
+        Meow meow, zap zap.
+      </p>
+
+      <a
+        href="mailto:hello@electriclynx.com"
+        class="inline-flex items-center justify-center rounded-xl border border-elynx-orange/70 px-5 py-3 text-base md:text-lg text-elynx-orange transition hover:bg-elynx-orange-transparent hover:border-elynx-orange focus:outline-none focus:ring-2 focus:ring-elynx-orange/40"
+      >
+        hello@electriclynx.com
+      </a>
+
+      <div class="mt-10 h-px w-full max-w-3xl bg-box-border/40"></div>
+
+      <p class="text-xs md:text-sm text-heading-3/60">
+        © {new Date().getFullYear()} Electric Lynx
+      </p>
     </div>
-  </Container>
+  </div>
 </FooterContainer>

@@ -1,0 +1,6 @@
+/* Tailwind v3 style */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* your custom globals can go below if you want */
