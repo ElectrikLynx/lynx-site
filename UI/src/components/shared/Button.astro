@@ -3,9 +3,10 @@ interface Props {
   className?: string;
   variant: "primary" | "secondary" | "form";
   navigateTo?: string;
+  type?: "button" | "submit" | "reset";
 }
 
-const { className, variant, navigateTo } = Astro.props;
+const { className, variant, navigateTo, type = "button" } = Astro.props;
 
 const getThemeStyle = (variant: "primary" | "secondary" | "form") => {
   if (variant === "primary") {
@@ -30,7 +31,7 @@ const getThemeStyle = (variant: "primary" | "secondary" | "form") => {
     </a>
   ) : (
     <button
-      type={variant !== "form" ? "button" : "submit"}
+      type={type}
       class={`px-6 py-3 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
         after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#172554]
         ${getThemeStyle(
