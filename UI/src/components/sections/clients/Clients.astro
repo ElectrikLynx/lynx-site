@@ -48,11 +48,14 @@ const clients = [
             <p class="text-sm text-neutral-300">{client.services}</p>
           </div>
 
+
           <!-- Key Stats -->
-          <div class="w-full border-t border-neutral-700 pt-4">
-            <h4 class="text-elynx-orange font-semibold mb-2">Key Stats</h4>
-            <p class="text-sm text-neutral-300">{client.keystats}</p>
-          </div>
+          {client?.keystats &&
+            <div class="w-full border-t border-neutral-700 pt-4">
+              <h4 class="text-elynx-orange font-semibold mb-2">Key Stats</h4>
+              <p class="text-sm text-neutral-300">{client.keystats}</p>
+            </div>
+          }
 
           <!-- Links -->
           <div class="flex flex-wrap justify-center gap-4 pt-2">
