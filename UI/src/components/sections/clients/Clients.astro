@@ -8,14 +8,23 @@ const clients = [
       facebook: "https://www.facebook.com/bringbackanalog/",
       tiktok: "https://www.tiktok.com/@bringbackanalog",
     },
-    blurb: "High-end analog sound systems for new generations.",
+    blurb: "High-end analog sound systems",
     services: "Photography, Videography, Social Media Management, Local Outreach",
+    keystats: "300% Sales Growth in first 3 Months, 100k+ views/monthly",
   },
   {
+    name: "Debatetrack",
+    logo: "/images/clients/debatetrack/logo.webp",
+    website: "https://debatetrack.com/",
+    blurb: "The #1 Brand in Public Forum Debate (a personal project)",
+    services: "Social Media, Web Design, Email Management",
+    keystats: "50%+ email open rates for years-long campaigns, 13k+ Youtube Watch Hours",
+  },
+    {
     name: "D's Barbershop",
     logo: "/images/clients/ds_barbershop/logo.webp",
     website: "https://dsbarbershop.com/",
-    blurb: "Dayton's Premiere Barbershop.",
+    blurb: "Dayton's Premiere Barbershop",
     services: "Photography, Website Design & Maintenance",
   },
 ];
@@ -37,6 +46,12 @@ const clients = [
           <div class="w-full border-t border-neutral-700 pt-4">
             <h4 class="text-elynx-orange font-semibold mb-2">Scope of Work</h4>
             <p class="text-sm text-neutral-300">{client.services}</p>
+          </div>
+
+          <!-- Key Stats -->
+          <div class="w-full border-t border-neutral-700 pt-4">
+            <h4 class="text-elynx-orange font-semibold mb-2">Key Stats</h4>
+            <p class="text-sm text-neutral-300">{client.keystats}</p>
           </div>
 
           <!-- Links -->
