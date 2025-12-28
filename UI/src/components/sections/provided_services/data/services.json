@@ -1,21 +1,6 @@
 {
   "services": [
     {
-      "title": "Brand Design",
-      "description": "<b> It's all branding.</b> But cohesive brand design is a necessary starting point — standardizing fonts, logos, colors, copy and design across everywhere your customers encounters you.",
-      "icon": "puzzle"
-    },
-    {
-      "title": "Websites",
-      "description": " The internet is filled with sub-par websites. We want to change that. Each of our websites is custom-made, fully-polished and built around your brand. And importantly: <b> form + function.</b> ",
-      "icon": "clipboard"
-    },
-    {
-      "title": "SEO & AEO",
-      "description": "<b>SEO is dead, long live SEO.</b>  Search is no longer king. Today it’s LLMs, social, ads, and Google Profiles. We track the shifts so your business doesn’t fall behind.",
-      "icon": "magnifyingglass"
-    },
-    {
       "title": "Social Media",
       "description": "GOOD Organic social posts are the main under-valued marketing tool. <b> They're free. Theyr'e fun.</b>  And your competition is probably doing them wrong.",
       "icon": "video"
